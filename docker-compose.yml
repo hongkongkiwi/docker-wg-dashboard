@@ -4,11 +4,13 @@ services:
     build: .
     image: hongkongkiwi/wg-dashboard
     volumes:
-      - ./wireguard/wg0.conf:/etc/wireguard/wg0.conf:rw
-      - ./config/server_config.json:/wg-dashboard/server_config.json:rw
-      - ./config/coredns:/etc/coredns/Corefile:rw
+      - ./wireguard:/etc/wireguard:rw
+      - ./configs:/configs:rw
     environment:
       - TZ=Asia/Hong_Kong
+      - NODE_ENV=development
     ports:
       - 3000:3000
       - 53:8053
+    cap_add:
+      - NET_ADMIN

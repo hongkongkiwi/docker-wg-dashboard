@@ -3,7 +3,7 @@
   "users": [
     {
       "id": 1,
-      "username": "andy",
+      "username": "andy2",
       "password": "$2b$10$kfPfsugyoAEAcxQJHdIVtOoK4V1eWK5nEEyCEqj3dUHHfLGQvFOS6"
     }
   ],
@@ -18,24 +18,7 @@
   "allowed_ips": [
     "0.0.0.0/0"
   ],
-  "peers": [
-    {
-      "id": 0,
-      "device": "",
-      "virtual_ip": "10.13.37.2",
-      "public_key": "NAJ9n6XtfCWe/LsLBX9xVYQFuZSjFTjCwW49qkY+dHI=",
-      "private_key": "eCgMRZLJTi2DV81egxajNVALik0bcTd12RR6c9qTYmM=",
-      "active": true
-    },
-    {
-      "id": 1,
-      "device": "",
-      "virtual_ip": "10.13.37.3",
-      "public_key": "ab+cIp9fdlcUBbPTgBCXNX0hOrEiFnatJooC200LoRM=",
-      "private_key": "8NUOf4B6KtcwcnJJ5cKJ318Rz2Y72FlmZBGauT7bkWU=",
-      "active": true
-    }
-  ],
+  "peers": [],
   "private_traffic": false,
   "dns_over_tls": true,
   "tls_servername": "tls.cloudflare-dns.com",

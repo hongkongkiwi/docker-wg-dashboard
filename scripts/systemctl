@@ -2,10 +2,18 @@
 
 if [[ "$1" == "restart" ]] && [[ "$2" == "coredns" ]]; then
   echo "Restart Coredns"
+  exit 0
 elif [[ "$1" == "stop" ]] && [[ "$2" == "wg-quick@wg0" ]]; then
-  echo "stop wg-quick"
+  wg-quick down wg0
+  exit $?
 elif [[ "$1" == "start" ]] && [[ "$2" == "wg-quick@wg0" ]]; then
-  echo "start wg-quick"
+  wg-quick up wg0
+  exit $?
+elif [[ "$1" == "restart" ]] && [[ "$2" == "wg-quick@wg0" ]]; then
+  wg-quick down wg0
+  wg-quick up wg0
+  exit $?
 else
   echo "Unsure how to handle this $@"
+  exit 1
 fi
