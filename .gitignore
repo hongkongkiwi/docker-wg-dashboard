@@ -1,1 +1,2 @@
 wireguard/*
+config/server_config.json

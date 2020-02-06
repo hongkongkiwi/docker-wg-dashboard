@@ -11,4 +11,4 @@ services:
       - TZ=Asia/Hong_Kong
     ports:
       - 3000:3000
-      - 53:53
+      - 53:8053

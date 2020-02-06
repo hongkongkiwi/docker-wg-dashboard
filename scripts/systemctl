@@ -1,3 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
-
+if [[ "$1" == "restart" ]] && [[ "$2" == "coredns" ]]; then
+  echo "Restart Coredns"
+elif [[ "$1" == "stop" ]] && [[ "$2" == "wg-quick@wg0" ]]; then
+  echo "stop wg-quick"
+elif [[ "$1" == "start" ]] && [[ "$2" == "wg-quick@wg0" ]]; then
+  echo "start wg-quick"
+else
+  echo "Unsure how to handle this $@"
+fi

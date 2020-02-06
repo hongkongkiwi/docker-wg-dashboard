@@ -17,17 +17,27 @@ RUN apk --no-cache --update --virtual build-dependencies add \
       awk '/browser_download_url/ {print $2}' | sort -ru | \
       awk '/linux_amd64.tgz"/ {print; exit}' | sed -r 's/"(.*)"/\1/')" && \
     tar -C /usr/bin -xvzf /tmp/coredns-latest.tgz && \
-    adduser -h /config -S coredns && \
     rm /tmp/coredns-latest.tgz && \
     apk del build-dependencies && \
-    mkdir -p /etc/coredns && \
-    chmod +x /usr/local/bin/*.sh
+    mkdir -p /etc/coredns
+
+RUN addgroup -g 1001 -S docker && \
+    adduser -u 1001 -S docker -G docker && \
+    adduser -h /config -S coredns -G docker && \
+    chown -R docker:docker /wg-dashboard && \
+    chown docker:docker /usr/bin/coredns && \
+    chmod +x /usr/local/bin/* && \
+    chown docker:docker /usr/local/bin/*
+
+USER docker
 
 ENV TZ=Asia/Hong_Kong
+
+VOLUME ["/etc/wireguard","/etc/coredns"]
 
 EXPOSE 3000
 EXPOSE 53
 
 WORKDIR "/wg-dashboard"
 
-CMD ["/start.sh"]
+CMD ["/usr/local/bin/start.sh"]
