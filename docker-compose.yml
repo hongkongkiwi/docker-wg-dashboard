@@ -4,7 +4,7 @@ services:
     build: .
     image: hongkongkiwi/wg-dashboard
     volumes:
-      - ./config/wg0.conf:/etc/wireguard/wg0.conf:rw
+      - ./wireguard/wg0.conf:/etc/wireguard/wg0.conf:rw
     environment:
       - TZ=Asia/Hong_Kong
     ports:
