@@ -1,7 +1,7 @@
 FROM node:10.18.1-alpine3.9
 
 ADD ./config/coredns /etc/coredns/Corefile
-ADD ./start.sh /start.sh
+ADD ./scripts/* /usr/local/bin/
 
 RUN apk --no-cache --update --virtual build-dependencies add \
       build-base python python3 tzdata && \
@@ -21,7 +21,7 @@ RUN apk --no-cache --update --virtual build-dependencies add \
     rm /tmp/coredns-latest.tgz && \
     apk del build-dependencies && \
     mkdir -p /etc/coredns && \
-    chmod +x /start.sh
+    chmod +x /usr/local/bin/*.sh
 
 ENV TZ=Asia/Hong_Kong
 
