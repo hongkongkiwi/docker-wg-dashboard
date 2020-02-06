@@ -30,5 +30,4 @@ EXPOSE 53
 
 WORKDIR "/wg-dashboard"
 
-ENTRYPOINT ["/usr/local/bin/npm"]
-CMD ["run", "server"]
+CMD ["/start.sh"]
