@@ -5,6 +5,8 @@ services:
     image: hongkongkiwi/wg-dashboard
     volumes:
       - ./wireguard/wg0.conf:/etc/wireguard/wg0.conf:rw
+      - ./config/server_config.json:/wg-dashboard/server_config.json:rw
+      - ./config/coredns:/etc/coredns/Corefile:rw
     environment:
       - TZ=Asia/Hong_Kong
     ports:

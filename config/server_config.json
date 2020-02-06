@@ -1,0 +1,43 @@
+{
+  "webserver_port": 3000,
+  "users": [
+    {
+      "id": 1,
+      "username": "andy",
+      "password": "$2b$10$kfPfsugyoAEAcxQJHdIVtOoK4V1eWK5nEEyCEqj3dUHHfLGQvFOS6"
+    }
+  ],
+  "public_key": "CDxH3ZDO1YEir3GJckoKZAt0xulVAqEq7aryiYtLbm8=",
+  "ip_address": "addr:172.21.0.2",
+  "virtual_ip_address": "10.13.37.1",
+  "cidr": "24",
+  "port": "58210",
+  "dns": "1.1.1.1",
+  "network_adapter": "eth0",
+  "config_path": "/etc/wireguard/wg0.conf",
+  "allowed_ips": [
+    "0.0.0.0/0"
+  ],
+  "peers": [
+    {
+      "id": 0,
+      "device": "",
+      "virtual_ip": "10.13.37.2",
+      "public_key": "NAJ9n6XtfCWe/LsLBX9xVYQFuZSjFTjCwW49qkY+dHI=",
+      "private_key": "eCgMRZLJTi2DV81egxajNVALik0bcTd12RR6c9qTYmM=",
+      "active": true
+    },
+    {
+      "id": 1,
+      "device": "",
+      "virtual_ip": "10.13.37.3",
+      "public_key": "ab+cIp9fdlcUBbPTgBCXNX0hOrEiFnatJooC200LoRM=",
+      "private_key": "8NUOf4B6KtcwcnJJ5cKJ318Rz2Y72FlmZBGauT7bkWU=",
+      "active": true
+    }
+  ],
+  "private_traffic": false,
+  "dns_over_tls": true,
+  "tls_servername": "tls.cloudflare-dns.com",
+  "private_key": "uAzuWSkGag+SbdoGpIRqyimgLA/RGbLEy6m6jyqI2Xc="
+}
